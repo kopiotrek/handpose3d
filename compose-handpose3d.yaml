@@ -1,0 +1,30 @@
+services:
+  handpose3d:
+    tty: true
+    stdin_open: true
+    privileged: true
+    network_mode: "host"   
+    build:
+      dockerfile: handpose3d.dockerfile
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+#     networks:
+#       - vm_network
+
+# networks:
+#   vm_network:
+#     driver: macvlan
+#     ipam:
+#       driver: default
+#       config:
+#         - subnet: 172.30.0.0/16
