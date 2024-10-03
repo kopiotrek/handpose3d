@@ -42,10 +42,9 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
 # Update PATH for Conda
 ENV PATH="/opt/conda/bin:$PATH"
 
-# RUN rm -rf /var/lib/apt/lists/*
-
 # Clone the GitHub repository
-RUN git clone https://github.com/TemugeB/handpose3d.git
+# RUN git clone https://github.com/TemugeB/handpose3d.git
+# RUN git clone https://github.com/TemugeB/python_stereo_camera_calibrate
 
 COPY env_handpose3d.yml /handpose3d/env_handpose3d.yml
 RUN cd handpose3d && conda env create -f env_handpose3d.yml

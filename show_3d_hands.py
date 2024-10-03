@@ -71,14 +71,18 @@ def visualize_3d(p3ds):
         ax.set_yticks([])
         ax.set_zticks([])
 
-        ax.set_xlim3d(-7, 8)
+        # ax.set_xlim3d(-100, 100)
+        # ax.set_ylim3d(-100, 100)
+        # ax.set_zlim3d(-100, 100)
+
+        ax.set_xlim3d(-50, 50)
+        ax.set_ylim3d(-50, 50)
+        ax.set_zlim3d(-150, -50)
         ax.set_xlabel('x')
-        ax.set_ylim3d(-7, 8)
         ax.set_ylabel('y')
-        ax.set_zlim3d(0, 15)
         ax.set_zlabel('z')
-        ax.elev = 0.2*i
-        ax.azim = 0.2*i
+        # ax.elev = 0.2*i
+        # ax.azim = 0.2*i
         plt.savefig('figs/fig_' + str(i) + '.png')
         plt.pause(0.01)
         ax.cla()

@@ -9,3 +9,6 @@ dependencies:
       - mediapipe
       - opencv-python
       - matplotlib
+      # For python_stereo_camera_calibrate:
+      - pyYAML
+      - scipy
